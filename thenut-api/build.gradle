@@ -1,0 +1,18 @@
+plugins {
+    alias libs.plugins.springBoot
+}
+
+description = 'Thenut API'
+jar.archiveBaseName.set('thenut-api')
+
+dependencies {
+    implementation project('infra')
+}
+
+springBoot {
+    mainClass = 'com.attech.thenutapi.ThenutApiApplication'
+}
+
+build {
+    dependsOn 'domain:build', 'infra:build'
+}

@@ -1,0 +1,26 @@
+plugins {
+    alias libs.plugins.springBoot
+    alias libs.plugins.dependencyManagement
+}
+
+configurations {
+    compileOnly {
+        extendsFrom annotationProcessor
+    }
+}
+
+dependencies {
+    implementation project.parent.project("domain")
+    implementation libs.springBoot.dataJpa
+    implementation libs.springBoot.web
+    implementation libs.springBoot.security
+    implementation libs.jsonwebtoken.jjwtApi
+    implementation libs.jsonwebtoken.jjwtImpl
+    implementation libs.jsonwebtoken.jjwtJackson
+
+    compileOnly libs.lombok
+    runtimeOnly libs.postgresql
+    annotationProcessor libs.lombok
+
+    testImplementation libs.springBoot.test
+}

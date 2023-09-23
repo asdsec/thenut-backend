@@ -1,4 +1,5 @@
 rootProject.name = 'thenut'
 
-include 'infra'
-include 'domain'
+include ':thenut-api'
+include ':thenut-api:infra'
+include ':thenut-api:domain'

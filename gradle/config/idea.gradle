@@ -1,0 +1,11 @@
+apply plugin: 'idea'
+
+idea {
+    module {
+        inheritOutputDirs = false
+        outputDir = compileJava.destinationDirectory.asFile.get()
+        testOutputDir = compileTestJava.destinationDirectory.asFile.get()
+        downloadJavadoc = false
+        downloadSources = true
+    }
+}
